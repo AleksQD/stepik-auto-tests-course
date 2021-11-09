@@ -18,10 +18,11 @@ try:
     browser = webdriver.Chrome(options=options)
     browser.get(link)
 
-    # говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
+    # говорим Selenium проверять в течение 12 секунд, пока цена не станет равной 100
     text = WebDriverWait(browser, 12).until(
         EC.text_to_be_present_in_element((By.ID, "price"), '$100')
     )
+
     button = browser.find_element_by_id("book")
     button.click()
 
@@ -35,8 +36,6 @@ try:
     button = browser.find_element_by_id("solve")
     button.click()
 
-    # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-    #assert "Congratulations! You have successfully registered!" == welcome_text
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта
