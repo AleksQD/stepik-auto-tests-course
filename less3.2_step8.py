@@ -23,20 +23,19 @@ def sel_script(link):
     first_name = browser.find_element_by_css_selector(
         '.first[required = ""]')
     first_name.send_keys("test")
-    time.sleep(1)
+
     last_name = browser.find_element_by_css_selector(
         '.second[required = ""]')
     last_name.send_keys("test")
-    time.sleep(1)
+
     mail = browser.find_element_by_css_selector(
         '.third[required = ""]')
     mail.send_keys("test")
-    time.sleep(1)
+
     # Отправляем заполненную форму
     button = browser.find_element_by_css_selector("button.btn")
     button.click()
 
-    # Проверяем, что смогли зарегистрироваться
     # ждем загрузки страницы
     time.sleep(1)
 
